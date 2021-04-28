@@ -13,7 +13,7 @@
 * 통신규약 이라고 한다
 * 지점과 지점이 통신을 하는데 서로 신뢰하지 못한다면 막대한 비용적인 낭비가 발생할 것이다
 
-### Internet(Inter Netword, 국가간 통신) Protocol
+### Internet(Inter Network, 국가간 통신) Protocol
 * TCP/IP 프로토콜 
 * 각 지점에 고유한 IP Address를 부여한다.
 * IP Address는 절대 2곳 이상에 같은 값이 부여될 수 없다.
