@@ -45,9 +45,9 @@ https://naver.com:443
 * 컴퓨터의 Local Loop Back Address
 * Local에서 Server등의 서비스를 실행하고 테스트 할 수 있는 주소
 
-### Applet
+## Applet
 * Java로 코딩한 WebBrowser 플러그인
-### Servlet
+## Servlet
 * Java Controller 클래스
-### Scriptlet
+## Scriptlet
 * JSP로 코딩 된 Web Application
