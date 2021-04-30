@@ -52,6 +52,7 @@ public class BookServiceImplV1A implements BookService {
 	public List<BookVO> selectAll() {
 		// TODO 전체 도서목록 정보 조회
 		
+		// spl 명령문을 pStr 에 담은 뒤 pStr.executeQuery로 실행후 그 결과를 result에 담아라 
 		PreparedStatement pStr = null;
 		String sql = "SELECT * FROM tbl_books";
 		
