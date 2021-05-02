@@ -20,7 +20,7 @@ import com.callor.book.service.DBContract;
  * SQL Packing하고
  * Packing 된 객체를 사용하여 SQL 실행
  * 
- * 조죄할 경우는 수신된 데이터를 처리
+ * 조회할 경우는 수신된 데이터를 처리
  */
 public class BookServiceImplV1 implements BookService {
 	
