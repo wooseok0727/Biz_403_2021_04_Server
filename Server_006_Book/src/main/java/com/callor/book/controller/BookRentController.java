@@ -55,7 +55,7 @@ public class BookRentController extends HttpServlet {
 			
 			// book.jsp 파일을 읽어서
 			// app에 setting한 BOOK 변수와 함께
-			// Rendering을 하라
+			// Rendering을 하라 = BOOK에 담긴 data를 html로 변환하라
 			RequestDispatcher disp = app.getRequestDispatcher("/WEB-INF/views/book.jsp");
 			
 			// Rendering 된 view 데이터를
