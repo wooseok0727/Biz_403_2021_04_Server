@@ -6,14 +6,14 @@
 * Web Service는 Client(Web Browser)의 요청이 있을때만 반응을 시작한다.
 
 ## Client의 요청하기
-* URL을 통하여 http://localhost:8080/book/rent 와 같은 요청을 Web Browser의 주소창에 입력하는 방식으로 
+* URL을 통하여 http://localhost:8080/book/rent 와 같은 요청을 Web Browser의 주소창에 입력하는 방식으로 Cancel changes
 * Service를 실행하는 화면에서 Link(Anchor)를 클릭하기
 * Service를 실행하는 화면에서 데이터를 input box에 입력하고 전송하기
 
 ## Link 클릭
 * HTML 코드를 사용하여 파일을 만들고, 일단 Client에게 먼저 보여주고, Client가 클릭하도록 하기
 * Anchor tag 를 사용하여 코드를 작성하기
-* <!--<a href="요청">보여줄 내용</a>--!>
+* // <a href="요청">보여줄 내용</a>
 
 ## 데이터를 input box에 입력하고 전송하기
 * HTML 코드를 사용하여 파일을 만들고, 일단 Client에게 보여주고, Client가 값을 입력하고 전송을 클릭하면 데이터와 함께 요청하기
