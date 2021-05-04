@@ -13,11 +13,11 @@
 ## Link 클릭
 * HTML 코드를 사용하여 파일을 만들고, 일단 Client에게 먼저 보여주고, Client가 클릭하도록 하기
 * Anchor tag 를 사용하여 코드를 작성하기
-* (a href="요청">보여줄 내용</a>
+* (a href="요청")보여줄 내용(/a)
 
 ## 데이터를 input box에 입력하고 전송하기
 * HTML 코드를 사용하여 파일을 만들고, 일단 Client에게 보여주고, Client가 값을 입력하고 전송을 클릭하면 데이터와 함께 요청하기
-* (from action="요청"> (input name="변수이름"></form>
+* (from action="요청") (input name="변수이름")(/form)
 * input box 값을 입력하고 전송을 요청하면 요청?변수이름=값 형식으로 서버에 요청한다. Client가 입력한 데이터를 함께 서버로 전송하여 처리하도록 한다
 
 ## Server에서 처리하기
