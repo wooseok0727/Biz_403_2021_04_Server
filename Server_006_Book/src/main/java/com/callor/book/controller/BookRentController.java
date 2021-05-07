@@ -110,6 +110,7 @@ public class BookRentController extends HttpServlet {
 			// 도서대여 전체 목록
 			brService.selectAll();
 			out.println("도서대여 전체목록 보기");
+			out.close();
 		} else if (subPath.equals("/isbn")) {
 			// 도서코드로 찾기
 			brService.findByISBN("isbn");
@@ -221,20 +222,21 @@ public class BookRentController extends HttpServlet {
 			
 			int result = brService.insert(brVO);
 			if( result > 0) {
-				out.println("대여정보 추가 성공");
+				// out.println("대여정보 추가 성공");
+				resp.sendRedirect("/book");
 			} else {
-				out.println("대여정보 추가 실패");
+				// out.println("대여정보 추가 실패");
+				resp.sendRedirect("/book/order");
 			}
-			out.close();
-			
 			
 		} else if (subPath.equals("/return")) {
 			// 반납하기
 			BookRentVO bookRentVO = new BookRentVO();
 			brService.update(bookRentVO);
 		} else {
-			// 종료
+			// 더이상 그만하기
+			out.println("NOT FOUND");
+			out.close();
 		}
-		out.close();
 	} // end doGet()
 }
