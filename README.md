@@ -56,3 +56,8 @@ https://naver.com:443
 * Controller에서 받은 데이터를 편리하게 출력하기 위해 만들어진 간편한 언어
 ## JSTL : JSP Standard Tag Lib
 * 표준 Tag나 EL로 표현하기 어려운 부분을 쉽게 표현하는 확장된 Tag
+
+#### HTTP : Hyper Text Transfer Protocol
+#### HTTPS : HTTP + Security
+#### HTML : Hyper Text Markup Lang.
+#### MD : Mark Down Lang.
