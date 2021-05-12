@@ -47,7 +47,6 @@ public class FoodController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		req.setCharacterEncoding("UTF-8");
 		String subPath = req.getPathInfo();
 		
 		if(subPath == null || subPath.equals("")) {
