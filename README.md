@@ -61,3 +61,6 @@ https://naver.com:443
 #### HTTPS : HTTP + Security
 #### HTML : Hyper Text Markup Lang.
 #### MD : Mark Down Lang.
+
+#### VO : Value Object (Inser, Update를 위한 데이터)
+#### DTO : Date Transfer Object ( Select 된 데이터를 View로 옮길 때)
