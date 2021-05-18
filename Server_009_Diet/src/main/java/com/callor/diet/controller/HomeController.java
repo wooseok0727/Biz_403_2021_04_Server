@@ -27,7 +27,6 @@ public class HomeController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
 		String mf_date = req.getParameter("mf_date");
 		List<MyFoodCDTO> mfList = null;
 		if(mf_date == null || mf_date.equals("")) {
