@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C" %>	
 <C:set value="${pageContext.request.contextPath}" var="rootPath" />
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 <meta charset="UTF-8">
 <title>식품정보 검색</title>
