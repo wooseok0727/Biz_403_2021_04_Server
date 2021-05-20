@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link href="${rootPath}/static/css/home.css?ver2021-05-20-001" rel="stylesheet" />
 <style>
-	table#gblist tr {
+	table#gblist tr:hover {
 		cursor: pointer;
 		background-color: #ddd;
 	}

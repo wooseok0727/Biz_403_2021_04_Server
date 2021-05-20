@@ -59,7 +59,7 @@ nav#main a {
 		
 		/*
 			상단 메뉴의 항목을 클릭했을 때
-			url을 전화하여 다른 화면으로 점프하기
+			url을 전환하여 다른 화면으로 점프하기
 			=> 다른 page로 전환하기		
 			
 			메뉴의 항목인 ul > li tag를 클릭했을 때
@@ -68,7 +68,7 @@ nav#main a {
 			id 가 main인 nav tag에 클릭 event를 선언하였다
 			nav tag를 클릭하면
 			선택된 li tag의 메뉴제목을 캐치하여
-			메뉴제옥에 따라 필요한 page로 전환을 한다
+			메뉴제목에 따라 필요한 page로 전환을 한다
 		*/
 		document.querySelector("nav#main").addEventListener("click",function(ev) { 
 			let text = ev.target.textContent;
