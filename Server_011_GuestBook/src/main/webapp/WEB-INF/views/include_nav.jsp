@@ -72,6 +72,7 @@ nav#main a {
 		*/
 		document.querySelector("nav#main").addEventListener("click",function(ev) { 
 			let text = ev.target.textContent;
+			alert(text + "이(가) 클릭됨!!!");
 			
 			let url = "${rootPath}"
 			if(text == "HOME") {
