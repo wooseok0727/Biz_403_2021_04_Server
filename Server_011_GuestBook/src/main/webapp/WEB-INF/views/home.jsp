@@ -19,7 +19,7 @@
 		document.querySelector("table#gblist").addEventListener("click",function(ev){
 			// 가장 안쪽 tag(td)의 이름을 가져와라
 			let tag_name = ev.target.tagName;
-			if(tag_name = "TD"){
+			if(tag_name == "TD"){
 				let gb_seq = ev.target.closest("TR").dataset.seq;
 				document.location.href="${rootPath}/guest/view/?gb_seq=" + gb_seq;
 			}
