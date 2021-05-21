@@ -8,54 +8,54 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	form.v1 {
-		width: 600px;
-		margin: 10px auto;
-	}
-	form.v1 fieldset {
-		border: 1px solid black;
-		border-radius: 10px;
-		padding: 5px;
-	}
-	/* label과 input 공통 속성을 한번에 지정하기 */
-	form.v1 label, form.v1 input, form.v1 textarea {
-		display: inline-block;
-		padding: 5px;
-		margin: 5px;
-	}
-	form.v1 label {
-		width: 150px;
-		text-align: right;
-		font-weight: bold;
-	}
-	form.v1 input, form.v1 textarea {
-		width: 300px;
-		border: 1px solid gray;
-		border-radius: 5px;
-	}
-	form.v1 button {
-		outline: 0;
-		border: 0;
-		width: 100px;
-		color: white;
-		padding: 5px;
-	}
-	
-	form.v1 button:nth-child(2) {
-		background-color: black;
-	}
-	
-	form.v1 button:nth-child(3) {
-		background-color: black;
-	}
-	
-	form.v1 button:nth-child(4) {
-		background-color: black;
-	}
-	
-	form.v1 button:hover {
-		box-shadow: 2px 2px 2px rgba(0,0,0, 0.3);
-	}
+form.v1 {
+	width: 600px;
+	margin: 10px auto;
+}
+form.v1 fieldset {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 5px;
+}
+/* label과 input 공통 속성을 한번에 지정하기 */
+form.v1 label, form.v1 input, form.v1 textarea {
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+}
+form.v1 label {
+	width: 150px;
+	text-align: right;
+	font-weight: bold;
+}
+form.v1 input, form.v1 textarea {
+	width: 300px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+form.v1 button {
+	outline: 0;
+	border: 0;
+	width: 100px;
+	color: white;
+	padding: 5px;
+}
+
+form.v1 button:nth-child(2) {
+	background-color: black;
+}
+
+form.v1 button:nth-child(3) {
+	background-color: black;
+}
+
+form.v1 button:nth-child(4) {
+	background-color: black;
+}
+
+form.v1 button:hover {
+	box-shadow: 2px 2px 2px rgba(0,0,0, 0.3);
+}
 </style>
 <script>
 // script를 본문 어디에나 두기 위해

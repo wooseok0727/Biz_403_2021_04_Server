@@ -124,8 +124,9 @@ public class GuestBookServiceImplV1 implements GuestBookService {
 			pStr.setString(4, gbVO.getGb_email());
 			pStr.setString(5, gbVO.getGb_password());
 			pStr.setString(6, gbVO.getGb_content());
-			
-			return pStr.executeUpdate();
+			Integer result = pStr.executeUpdate();
+			pStr.close();
+			return result;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -156,8 +157,9 @@ public class GuestBookServiceImplV1 implements GuestBookService {
 			pStr.setString(5, gbVO.getGb_password());
 			pStr.setString(6, gbVO.getGb_content());
 			pStr.setLong(7, gbVO.getGb_seq());
-			
-			return pStr.executeUpdate();
+			Integer result = pStr.executeUpdate();
+			pStr.close();
+			return result;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

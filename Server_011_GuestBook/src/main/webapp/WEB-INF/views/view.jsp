@@ -8,36 +8,37 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${rootPath}/static/css/home.css?ver2021-05-18-002" rel="stylesheet" />
-	<style>
-		div.view_btn {
-			width: 80%;
-			margin: 10px auto;
-			text-align: right;
-		}
-		div.view_btn button {
-			margin: 5px;
-			padding: 8px;
-			outline: none;
-			border: none;
-			color: white;
-		}
-		div.view_btn button:nth-child(1){
-			background-color: black;
-		}
-		div.view_btn button:nth-child(2){
-			background-color: black;
-		}
-		div.view_btn button:nth-child(3){
-			background-color: black;
-		}
-		div.view_btn button:hover {
-			box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3); 
-		}
-	</style>
+<style>
+div.view_btn {
+	width: 80%;
+	margin: 10px auto;
+	text-align: right;
+}
+div.view_btn button {
+	margin: 5px;
+	padding: 8px;
+	outline: none;
+	border: none;
+	color: white;
+}
+div.view_btn button:nth-child(1){
+	background-color: black;
+}
+div.view_btn button:nth-child(2){
+	background-color: black;
+}
+div.view_btn button:nth-child(3){
+	background-color: black;
+}
+div.view_btn button:hover {
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3); 
+}
+</style>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
 	document.querySelector("div.view_btn").addEventListener("click",function(ev){
 		
+		// 클릭된 tag의 클래스이름 가져오기
 		let className = ev.target.className
 		if(className == "btn_home") {
 			document.location.href="${rootPath}/"
