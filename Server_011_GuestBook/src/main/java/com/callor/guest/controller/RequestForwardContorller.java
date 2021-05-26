@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 public class RequestForwardContorller {
 	
 	private final static String prefix =  "/WEB-INF/views/";
-	private final static String surfix = ".jsp";
+	private final static String suffix = ".jsp";
 	
 	public static void forward(HttpServletRequest req, HttpServletResponse resp, String file) throws ServletException, IOException {
 		
-		String viewFile =  prefix + file + surfix;
+		String viewFile =  prefix + file + suffix;
 		req.getRequestDispatcher(viewFile).forward(req, resp);
 	}
 }
