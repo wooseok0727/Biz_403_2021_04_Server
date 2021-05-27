@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MY TODO LIST</title>
 <style>
 /* style 지정을 위하여 전체 초기화 */
@@ -102,6 +103,37 @@ table.td_list td.doit {
 table.td_list tr:hover {
 	background-color: #eee;
 }
+
+.underline {
+	text-decoration: 3px underline red dashed;
+}
+
+.text-through {
+	text-decoration: 3px line-through red wavy;
+}
+
+/*
+media query
+반응형 web에서 사용하는 CSS 기법
+
+max-width: 화면 폭이 이값보다 작으면
+min-width: 화면 폭이 이값보다 크면
+
+*/
+@media screen and (max-width: 800px) {
+	h1, form.doit, table.td_list {
+		width: 95%;
+		margin: 5px auto;
+	}
+	
+	h1 {
+		font-size: 10px;
+	}
+	
+	form.doit {
+		background-color: blue;
+	}
+}
 </style>
 <script>
 // script가 어디에 위치하든 상관없이
@@ -160,8 +192,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 	<table class="td_list">
 		<C:forEach items="${TDLIST}" var="TD">
 			<tr data-seq="${TD.td_seq}" data-edate="${TD.td_edate}">
-				<td class="sdate">${TD.td_sdate}<br/>${TD.td_stime}</td>
-				<td class="doit">${TD.td_doit}</td>
+				<td class="sdate ${empty TD.td_edate ? '' : 'underline'}">${TD.td_sdate}<br/>${TD.td_stime}</td>
+				<td class="doit ${empty TD.td_edate ? '' : 'text-through'}">${TD.td_doit}</td>
 				<td class="edate">${TD.td_edate}<br/>${TD.td_etime}</td>
 			</tr>
 		</C:forEach>
