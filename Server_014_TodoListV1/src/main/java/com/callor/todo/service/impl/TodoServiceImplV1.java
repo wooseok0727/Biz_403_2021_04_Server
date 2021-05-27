@@ -33,7 +33,7 @@ public class TodoServiceImplV1 implements TodoService {
 	 * 조회를 할 수 있는 데이터들
 	 * 
 	 *  메타데이터(meta data)
-	 *  생성한 DataBase, table, sequence, view ... 이
+	 *  생성한 DataBase, table, sequence, view ...등 이
 	 *  어떤 구조로 만들어져 있는가 등의 정보를
 	 *  메타데이터라고 한다.
 	 * 	 예)myDB라는 database에 몇개의 table이 있는가
@@ -120,6 +120,24 @@ public class TodoServiceImplV1 implements TodoService {
 	@Override
 	public Map<String, Object> findById(Long td_seq) {
 		// TODO Auto-generated method stub
+		String sql = " SELECT * FROM tbl_todolist ";
+		sql += " WHERE td_seq = ? ";
+		
+		PreparedStatement pStr = null;
+		try {
+			pStr = dbConn.prepareStatement(sql);
+			pStr.setLong(1, td_seq);
+			ResultSet rSet = pStr.executeQuery();
+			List<Map<String,Object>> tdList = this.select(rSet);
+			rSet.close();
+			pStr.close();
+			if(tdList != null && tdList.size() > 0) {
+				return tdList.get(0);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -181,6 +199,36 @@ public class TodoServiceImplV1 implements TodoService {
 	@Override
 	public Integer update(Map<String, Object> tdVO) {
 		// TODO Auto-generated method stub
+		String sql = " UPDATE tbl_todolist SET ";
+		sql += " td_sdate = ?, ";
+		sql += " td_stime = ?, ";
+		sql += " td_doit = ?, ";
+		sql += " td_edate = ?, ";
+		sql += " td_etime = ? ";
+		sql += " WHERE td_seq = ? ";
+		
+		PreparedStatement pStr = null;
+		try {
+			pStr = dbConn.prepareStatement(sql);
+			pStr.setObject(1, tdVO.get(DBInfo.td_sdate));
+			pStr.setObject(2, tdVO.get(DBInfo.td_stime));
+			pStr.setObject(3, tdVO.get(DBInfo.td_doit));
+			pStr.setObject(4, tdVO.get(DBInfo.td_edate));
+			pStr.setObject(5, tdVO.get(DBInfo.td_etime));
+			pStr.setObject(6, tdVO.get(DBInfo.td_seq));
+			
+			Integer result = pStr.executeUpdate();
+			pStr.close();
+			return result;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		
+		
+		
 		return null;
 	}
 

@@ -10,11 +10,11 @@
 <style>
 /* style 지정을 위하여 전체 초기화 */
 * {
-	box-sizing: border=box;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-h1, form.doit {
+h1, form.doit, table.td_list {
 	width: 50%;
 	margin: 10px auto;
 	border-radius: 5px;
@@ -26,14 +26,13 @@ h1 {
 	text-align: center;
 	
 	/* text에 그림자 지정 */
-	text-shadow: 3px 3px 3px #000;
+	text-shadow: 5px 5px 5px #000;
 }
 form.doit {
 	border: 1px solid;
 	padding: 10px;
 	text-align: center;
 }
-
 form.doit input {
 	width: 90%;
 	
@@ -48,11 +47,87 @@ form.doit input {
 form.doit input:hover {
 	background-color: #eee;
 }
+table.td_list {
+	border-collapse: collapse;
+	/* table-layout: fixed; */
+	/* 
+		table을 그릴때 각 td와 td 간격에
+		미세하게 여백이 있어서 가끔 선을 그리면
+		선과 선사이에 틈새가 보인다
+		이러한 틈새를 막기위해 설정하는 값
+	*/	
+	border-spacing: 0;
+}
+table.td_list td {
+	padding: 7px;
+	border-top: 1px solid;
+	cursor: pointer;
+}
 
+/* table의 가장 마지막 tr(line)의 칼럼들에게만 적용 */
+table.td_list tr:last-child td {
+	border-bottom: 1px solid;
+}
+table.td_list td.sdate, table.td_list td.edate {
+	font-size: 15px;
+	text-align: center;
+	width: 20%;
+}
 
+table.td_list td.doit {
+	font-size: 20px;
+	text-align: left;
+	
+	/*
+		width : 무조건 폭을 지정
+		max-width : 창폭에 따라 조절을 하되 최대 크기를 제한
+	*/
+	max-width: 80%;
+	
+	/* td의 width보다 큰 text를 말줄임표로 표현하기
+	   
+	   td가 3개인데
+	   첫번째, 세번째 td를 20%설정했기 때문에
+	   여기 td는 전체 table width의 60%가 될것이고
+	   이 상태에서 max-width를 0으로 지정하고
+	   ellipsis 설정을 해주면 된다.
+	
+	 */
+	max-width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+table.td_list tr:hover {
+	background-color: #eee;
+}
 </style>
-
-
+<script>
+// script가 어디에 위치하든 상관없이
+// 이후의 다른 Event가 정상적으로 설정될수 있도록 선언
+// 화면에 DOM 요소가 모두 완전하게 나타나면
+// 내부의 코드를 실행하라
+document.addEventListener("DOMContentLoaded",()=>{
+	
+	// ()=> { } : 화살표 함수 == function() {  }
+	document.querySelector("table.td_list").addEventListener("dblclick",(ev)=>{
+		// table의 TD 항목이 클릭되었을때만 반응하기 위해
+		let tagName = ev.target.tagName
+		if(tagName == "TD") {
+			// 방금 더블클릭된 TD를 감싸고 있는 TR의 seq의 값
+			let seq = ev.target.closest("TR").dataset.seq;
+			let edate = ev.target.closest("TR").dataset.edate;
+			
+			let msg = edate ? "TODO 완료를 취소합니다" : "TODO를 완료처리 합니다";
+			
+			if(confirm(msg)) {
+				location.href="${rootPath}/sub/expire?seq=" + seq;
+			}
+		}
+	})
+})
+</script>
 </head>
 <body>
 	<h1>TO DO LIST</h1>
@@ -84,15 +159,12 @@ form.doit input:hover {
 	</form>
 	<table class="td_list">
 		<C:forEach items="${TDLIST}" var="TD">
-			<tr>
-				<td>${TD.td_sdate}<br/>${TD.td_stime}</td>
-				<td>${TD.td_doit}</td>
-				<td>${TD.td_edate}<br/>${TD.td_etime}</td>
+			<tr data-seq="${TD.td_seq}" data-edate="${TD.td_edate}">
+				<td class="sdate">${TD.td_sdate}<br/>${TD.td_stime}</td>
+				<td class="doit">${TD.td_doit}</td>
+				<td class="edate">${TD.td_edate}<br/>${TD.td_etime}</td>
 			</tr>
 		</C:forEach>
 	</table>
-	
-	
-	
 </body>
 </html>
